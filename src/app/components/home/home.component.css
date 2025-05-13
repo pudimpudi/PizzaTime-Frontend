@@ -6,8 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-  font-weight: 800;
+  font-weight: 700;
 }
 .nav-op {
     display: flex;
@@ -52,4 +51,24 @@ a {
 }
 ul {
   list-style: none;
+}
+.sec-titulo {
+  font-family: "Teko";
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px 0px;
+  gap: 10px;
+}
+.sec-titulo img {
+  width: 40px;
+  height: 40px;
+}
+.linha {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  padding: 20px 0px;
 }

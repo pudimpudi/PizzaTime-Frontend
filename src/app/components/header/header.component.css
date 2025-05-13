@@ -43,12 +43,14 @@ h2 {
   align-items: center;
   gap: 15px;
 }
+
 .pesquisa {
   display: flex;
   flex-direction: row;
-  width: 26em;
-  justify-content: space-between;
+  align-items: center;
+  gap: 10px; 
   align-self: center;
+  width: 59em;
 }
 .pesquisa input {
   width: 20em;
@@ -70,11 +72,13 @@ h2 {
   margin-right: 10px;
 }
 .pesquisa-but {
-  width: 5em;
+  height: 40px;
+  padding: 0 20px;
   border: none;
   background-color: #15181f;
   color: white;
-  border-radius: 5px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 .pesquisa-but img {
   width: 70%;
