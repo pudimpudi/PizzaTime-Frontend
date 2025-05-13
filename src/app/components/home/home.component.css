@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+}
+.nav-op {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 4em;
+    padding: 4.5em 0rem;
+    gap: 17px;
+}
+.horarios-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.horarios-container span {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: #000000c7;
+  padding-bottom: 15px;
+}
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#op {
+  display: flex;
+  justify-content: space-between;
+  width: 73%;
+}
+#op a {
+  background-color: #15181f;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 30px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+ul {
+  list-style: none;
+}
