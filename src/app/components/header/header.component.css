@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+}
+h2 {
+  font-family: "Teko";
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.cab {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 4em;
+  background-color: #e90530;
+  color: white;
+  position: fixed;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  gap: 5px;
+}
+.logo h2 {
+  align-self: center;
+}
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+.cab-utilidades {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.pesquisa {
+  display: flex;
+  flex-direction: row;
+  width: 26em;
+  justify-content: space-between;
+  align-self: center;
+}
+.pesquisa input {
+  width: 20em;
+  font-size: 15px;
+  padding-left: 20px;
+  border-radius: 20px;
+  border-style: none;
+  border: 2px solid black;
+  height: 40px;
+  outline: none;
+}
+.pesquisa-buscar {
+  display: flex;
+}
+.pesquisa-buscar img {
+  padding: 0;
+  width: 28px;
+  align-self: center;
+  margin-right: 10px;
+}
+.pesquisa-but {
+  width: 5em;
+  border: none;
+  background-color: #15181f;
+  color: white;
+  border-radius: 5px;
+}
+.pesquisa-but img {
+  width: 70%;
+}
