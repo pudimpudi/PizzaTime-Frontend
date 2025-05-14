@@ -1,0 +1,59 @@
+<body>
+  <header class="cabecalho">
+    <div class="logo">
+      <img src="./Logo3.png" alt="Logo PizzaTime" />
+      <h2>PIZZATIME</h2>
+    </div>
+  </header>
+
+  <section class="formulario-cadastro">
+    <h3>Cadastrar Nova Pizza</h3>
+    <form (ngSubmit)="adicionarPizza()" #formPizza="ngForm">
+      <!-- adicionar upload de imagem -->
+      <input type="text" name="nome" [(ngModel)]="novaPizza.nome" placeholder="Nome da Pizza" required />
+      <input type="text" name="descricao" [(ngModel)]="novaPizza.descricao" placeholder="Descrição" required />
+      <input type="number" name="preco" [(ngModel)]="novaPizza.preco" placeholder="Preço" required step="0.01" />
+
+      <label for="categoria">CATEGORIA</label>
+      <select name="categoria" id="categoria" [(ngModel)]="novaPizza.categoria" required>
+        <option value="" disabled selected>Selecione a categoria</option>
+        <option value="Pizza">Pizza</option>
+        <option value="Combo">Combo</option>
+        <option value="Bebida">Bebida</option>
+        <option value="Pizzadoce">Pizza Doce</option>
+      </select>
+      <!-- botão não esta funcionando-->
+      <button type="submit" [disabled]="formPizza.invalid">Adicionar</button>
+    </form>
+
+  </section>
+
+  <section>
+    <div class="tabela-container">
+      <table class="tabela-produtos">
+        <thead>
+          <tr>
+            <th><th>
+            <th>NOME</th>
+            <th>CATEGORIA</th>
+            <th>DESCRIÇÃO</th>
+            <th>PREÇO</th>
+            <th>AÇÕES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pizza of pizzas">
+            <td>{{ pizza.nome }}</td>
+            <td>{{ pizza.categoria }}</td>
+            <td>{{ pizza.descricao }}</td>
+            <td>R$ {{ pizza.preco }}</td>
+            <td>
+              <button class="editar" (click)="editarPizza(pizza)">Editar</button>
+              <button class="excluir" (click)="excluirPizza(pizza.id)">Excluir</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</body>
