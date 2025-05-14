@@ -45,6 +45,12 @@
   padding: 8px 15px;
   border-radius: 30px;
 }
+#op a:hover {
+  background-color: #a72222;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 a {
   text-decoration: none;
   color: white;
