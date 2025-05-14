@@ -117,6 +117,7 @@ body {
 .tabela-produtos td {
   padding: 18px;
   border-bottom: 1px solid #a3a2a2;
+  text-align: center;
 }
 
 .tabela-produtos img {

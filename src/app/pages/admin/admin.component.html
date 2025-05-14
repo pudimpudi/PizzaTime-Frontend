@@ -7,7 +7,7 @@
   </header>
 
   <section class="formulario-cadastro">
-    <h3>Cadastrar Nova Pizza</h3>
+    <h3>Cadastrar Novo Produto</h3>
     <form (ngSubmit)="adicionarPizza()" #formPizza="ngForm">
       <!-- adicionar upload de imagem -->
       <input type="text" name="nome" [(ngModel)]="novaPizza.nome" placeholder="Nome da Pizza" required />
@@ -33,7 +33,6 @@
       <table class="tabela-produtos">
         <thead>
           <tr>
-            <th><th>
             <th>NOME</th>
             <th>CATEGORIA</th>
             <th>DESCRIÇÃO</th>

@@ -37,7 +37,7 @@
 #op {
   display: flex;
   justify-content: space-between;
-  width: 73%;
+  width: 50%;
 }
 #op a {
   background-color: #15181f;
