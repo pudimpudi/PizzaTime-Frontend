@@ -142,3 +142,39 @@ body {
 .tabela-produtos button:hover {
   background-color: #3a0808;
 }
+.menu-lateral {
+  position: fixed;
+  top: 70px; /* altura do header fixo */
+  left: 0;
+  width: 200px;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.6); /* preto semi-transparente */
+  backdrop-filter: blur(5px); /* efeito de desfoque elegante */
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-lateral li {
+  margin-bottom: 15px;
+}
+
+.menu-lateral a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.menu-lateral a:hover {
+  color: #00c3ff; /* cor de destaque no hover */
+}

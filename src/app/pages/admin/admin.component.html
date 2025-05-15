@@ -6,6 +6,13 @@
     </div>
   </header>
 
+  <section class="menu-lateral">
+    <ul>
+      <li><a href="/admin">Gerenciamento de Produtos</a></li>
+      <li><a routerLink="/usuarios">Gerenciamento de Usuários</a></li>
+    </ul>
+  </section>
+
   <section class="formulario-cadastro">
     <h3>Cadastrar Novo Produto</h3>
     <form (ngSubmit)="adicionarPizza()" #formPizza="ngForm">
