@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
-
+import { Produtos } from '../../entities/produtos';
+import { ProdutoService } from '../../services/produto.service';
 
 
 @Component({
@@ -13,37 +14,44 @@ import { FormsModule } from '@angular/forms';
 })
 
 // adiconar funções para aceitar upload de imagem
-export class AdminComponent {
-  produtos = [
-    { id: 1, nome: 'Mussarela', categoria: 'Salgada', descricao: 'Mussarela, molho e orégano.', preco: 29.99 },
-    { id: 2, nome: 'Frango com Catupiry', categoria: 'Salgada', descricao: 'Frango com catupiry, molho e orégano.', preco: 29.99 },
-  ];
-
-  novoProduto = {
-    nome: '',
-    categoria: '',
-    descricao: '',
-    preco: 0 // Usando 0 como valor padrão
-  };
-
-  adicionarProduto() {
-    if (this.novoProduto.preco > 0) {  // Verificação para garantir que o preço é válido
-      const nova = { ...this.novoProduto, id: Date.now() };
-      this.produtos.push(nova);
-      this.novoProduto = { nome: '', categoria: '', descricao: '', preco: 0 };
-    } else {
-      alert('Por favor, insira um preço válido.');
-    }
+export class AdminComponent implements OnInit {
+  novoProduto: Produtos = {
+    nome:'',
+    categoria:'',
+    descricao:'',
+    preco:0
   }
 
-  editarProduto(produto: any) {
-    console.log('Editar produto:', produto);
+  produtos: Produtos [] = [];
+
+  constructor(private produtoService: ProdutoService){}
+
+  ngOnInit(): void {
+    this.carregarProdutos();
   }
 
-  excluirProduto(id: number) {
-    if (confirm('Tem certeza que deseja excluir o produto?')) {
-      this.produtos = this.produtos.filter(p => p.id !== id);
-    }
+  carregarProdutos(): void {
+    this.produtoService.findAllProdutos().subscribe(produtos => {
+      this.produtos =  produtos;
+    })
+  }
+
+  adicionarProdutos(): void {
+    const formData = new FormData();
+    formData.append('nome', this.novoProduto.nome);
+    formData.append('categoria', this.novoProduto.categoria);
+    formData.append('descricao', this.novoProduto.descricao);
+    formData.append('preco', this.novoProduto.preco.toString());
+
+    this.produtoService.adicionarProduto(formData).subscribe(() => {
+      this.carregarProdutos();
+      this.novoProduto = {
+        nome: '',
+        categoria: '',
+        descricao: '',
+        preco: 0
+      };
+    })
   }
 }
 

@@ -1,7 +1,7 @@
-export interface Produto {
-    id: number;
+export interface Produtos {
+    id?: number;
     nome: string;
     categoria: string;
     descricao: string;
-    preco: number;
+    preco: number
 }

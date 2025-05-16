@@ -1,3 +1,4 @@
+
 <body>
   <header class="cabecalho">
     <div class="logo">
@@ -6,10 +7,11 @@
     </div>
   </header>
   
-  <section class="formulario-cadastro">
+  <section>
+  </section>
+<section class="formulario-cadastro">
     <h3>Cadastrar Novo Produto</h3>
     <form (ngSubmit)="adicionarProduto()" #formProduto="ngForm">
-      <!-- adicionar upload de imagem -->
       <input type="text" name="nome" [(ngModel)]="novoProduto.nome" placeholder="Nome do Produto" required />
       <input type="text" name="descricao" [(ngModel)]="novoProduto.descricao" placeholder="Descrição" required />
       <input type="number" name="preco" [(ngModel)]="novoProduto.preco" placeholder="Preço" required step="0.01" />
@@ -22,7 +24,6 @@
         <option value="Bebida">Bebida</option>
         <option value="Doce">Pizza Doce</option>
       </select>
-      <!-- botão não esta funcionando-->
       <button type="submit" [disabled]="formProduto.invalid">Adicionar</button>
     </form>
 
