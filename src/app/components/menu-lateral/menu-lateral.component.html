@@ -1,0 +1,7 @@
+<!-- Se for funcionário, não mostra o menu lateral -->
+<nav *ngIf="!isFuncionario()" class="menu-lateral">
+  <ul>
+    <li><a routerLink="/produtos">Gerenciamento de Produtos</a></li>
+    <li><a routerLink="/usuarios">Gerenciamento de Usuários</a></li>
+  </ul>
+</nav>

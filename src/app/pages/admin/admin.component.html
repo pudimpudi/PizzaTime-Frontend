@@ -5,32 +5,25 @@
       <h2>PIZZATIME</h2>
     </div>
   </header>
-
-  <section class="menu-lateral">
-    <ul>
-      <li><a href="/admin">Gerenciamento de Produtos</a></li>
-      <li><a routerLink="/usuarios">Gerenciamento de Usuários</a></li>
-    </ul>
-  </section>
-
+  
   <section class="formulario-cadastro">
     <h3>Cadastrar Novo Produto</h3>
-    <form (ngSubmit)="adicionarPizza()" #formPizza="ngForm">
+    <form (ngSubmit)="adicionarProduto()" #formProduto="ngForm">
       <!-- adicionar upload de imagem -->
-      <input type="text" name="nome" [(ngModel)]="novaPizza.nome" placeholder="Nome da Pizza" required />
-      <input type="text" name="descricao" [(ngModel)]="novaPizza.descricao" placeholder="Descrição" required />
-      <input type="number" name="preco" [(ngModel)]="novaPizza.preco" placeholder="Preço" required step="0.01" />
+      <input type="text" name="nome" [(ngModel)]="novoProduto.nome" placeholder="Nome do Produto" required />
+      <input type="text" name="descricao" [(ngModel)]="novoProduto.descricao" placeholder="Descrição" required />
+      <input type="number" name="preco" [(ngModel)]="novoProduto.preco" placeholder="Preço" required step="0.01" />
 
       <label for="categoria">CATEGORIA</label>
-      <select name="categoria" id="categoria" [(ngModel)]="novaPizza.categoria" required>
+      <select name="categoria" id="categoria" [(ngModel)]="novoProduto.categoria" required>
         <option value="" disabled selected>Selecione a categoria</option>
-        <option value="Pizza">Pizza</option>
+        <option value="Salgada">Pizza</option>
         <option value="Combo">Combo</option>
         <option value="Bebida">Bebida</option>
-        <option value="Pizzadoce">Pizza Doce</option>
+        <option value="Doce">Pizza Doce</option>
       </select>
       <!-- botão não esta funcionando-->
-      <button type="submit" [disabled]="formPizza.invalid">Adicionar</button>
+      <button type="submit" [disabled]="formProduto.invalid">Adicionar</button>
     </form>
 
   </section>
@@ -48,14 +41,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let pizza of pizzas">
-            <td>{{ pizza.nome }}</td>
-            <td>{{ pizza.categoria }}</td>
-            <td>{{ pizza.descricao }}</td>
-            <td>R$ {{ pizza.preco }}</td>
+          <tr *ngFor="let produto of produtos">
+            <td>{{ produto.nome }}</td>
+            <td>{{ produto.categoria }}</td>
+            <td>{{ produto.descricao }}</td>
+            <td>R$ {{ produto.preco }}</td>
             <td>
-              <button class="editar" (click)="editarPizza(pizza)">Editar</button>
-              <button class="excluir" (click)="excluirPizza(pizza.id)">Excluir</button>
+              <button class="editar" (click)="editarProduto(produto)">Editar</button>
+              <button class="excluir" (click)="excluirProduto(produto.id)">Excluir</button>
             </td>
           </tr>
         </tbody>
